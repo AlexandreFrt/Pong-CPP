@@ -144,11 +144,11 @@ int main()
 
                 if (Intersect() == TopRacketL || Intersect() == BottomRacketL)
                 {
-                    ball = new Ball(ballRadius, racketL->GetPosition().x + racketLWidth, ball->GetPosition().y, ballColor);
+                    ball->SetPosition(Vector2f(racketL->GetPosition().x + racketLWidth, ball->GetPosition().y));
                 }
                 else
                 {
-                    ball = new Ball(ballRadius, racketR->GetPosition().x - ballRadius * 2, ball->GetPosition().y, ballColor);
+                    ball->SetPosition(Vector2f(racketR->GetPosition().x - ballRadius * 2, ball->GetPosition().y));
                 }
 
                 if (Intersect() == TopRacketL || Intersect() == TopRacketR)
@@ -170,11 +170,11 @@ int main()
 
                 if (Intersect() == TopWindow)
                 {
-                    ball = new Ball(ballRadius, ball->GetPosition().x, 0, ballColor);
+                    ball->SetPosition(Vector2f(ball->GetPosition().x, 0));
                 }
                 else
                 {
-                    ball = new Ball(ballRadius, ball->GetPosition().x, window_height - ballRadius * 2, ballColor);
+                    ball->SetPosition(Vector2f(ball->GetPosition().x, window_height - ballRadius * 2));
                 }
 
                 currentDirection = Vector2f(currentDirection.x, currentDirection.y * -1);
@@ -293,6 +293,8 @@ Collision Intersect()
 
     const unsigned int racketRMaxX = racketRMinX + racketRWidth;
     const int racketRMaxY = racketRMinY + racketRHeight;
+
+
 
     /*
     AABB algorithm (Axis-Aligned Bounding Boxes) in 2D

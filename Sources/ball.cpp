@@ -35,8 +35,11 @@ Ball::Ball(float radius, int posX, int posY, Color color)
 // Move function
 void Ball::Move(Vector2f direction, float speed)
 {
-	circle.setPosition(circle.getPosition().x + direction.x * speed, circle.getPosition().y + direction.y * -1 * speed);
-	currentDirection = direction;
+    if (canMove)
+    {
+        circle.setPosition(circle.getPosition().x + direction.x * speed, circle.getPosition().y + direction.y * -1 * speed);
+        currentDirection = direction;
+    }
 }
 
 // Return the circle
@@ -48,4 +51,11 @@ CircleShape Ball::GetShape()
 Vector2f Ball::GetPosition()
 {
 	return circle.getPosition();
+}
+
+void Ball::SetPosition(Vector2f position)
+{
+    canMove = false;
+    circle.setPosition(position);
+    canMove = true;
 }

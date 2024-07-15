@@ -53,9 +53,9 @@ const Color playerRColor{ Color::Red };
 const Color ballColor{ Color::White };
 const Player defaultPlayer = PlayerRight;
 const unsigned int maxScore{ 10 };
-const float racketLSpeed{ 7 };
-const float racketRSpeed{ 7 };
-const float defaultBallSpeed{ 11 };
+const float racketLSpeed{ 7.f };
+const float racketRSpeed{ 7.f };
+const float defaultBallSpeed{ 7.f };
 // With each collision with a racket, the speed of the ball increases by this value
 const float ballSpeedIncrease{ 0.15f };
 
@@ -84,7 +84,7 @@ const unsigned int racketRMinPosY{ 0 };
 const unsigned int racketRMaxPosY{ window_height - racketRHeight };
 
 // Ball properties
-const float ballRadius{ 12 };
+const float ballRadius{ 12.f };
 // Default location of the ball
 const unsigned int ballPosX{ static_cast<unsigned int>(window_width / 2.f - ballRadius / 2.f) };
 const unsigned int ballPosY{ static_cast<unsigned int>(window_height / 2.f - ballRadius) };

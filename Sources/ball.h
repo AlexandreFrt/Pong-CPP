@@ -32,12 +32,14 @@ class Ball
 {
 public:
 	CircleShape circle;
+    bool canMove = true;
 
 	// Functions
 	Ball(float radius, int posX, int posY, Color color);
 	void Move(Vector2f direction, float speed);
 	CircleShape GetShape();
 	Vector2f GetPosition();
+    void SetPosition(Vector2f position);
 
 private:
 	Vector2f currentDirection;
