@@ -2,6 +2,17 @@
 
 ![Image of the game](image.png "Image of the game")
 
+# How to play ?
+Left racket :\
+Move up : <kbd>Z</kbd>\
+Move down : <kbd>S</kbd>
+
+Right racket :\
+Move up : <kbd>&uarr;</kbd>\
+Move down : <kbd>&darr;</kbd>
+
+Toggle pause : <kbd>Escape</kbd>
+
 # How it works ?
 > [!IMPORTANT]
 > This project was made with Visual Studio 2022.
