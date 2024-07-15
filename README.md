@@ -3,11 +3,13 @@
 ![Image of the game](image.png "Image of the game")
 
 # How to play ?
-Left racket :\
+
+## Controls
+**Left racket :**\
 Move up : <kbd>Z</kbd>\
 Move down : <kbd>S</kbd>
 
-Right racket :\
+**Right racket :**\
 Move up : <kbd>&uarr;</kbd>\
 Move down : <kbd>&darr;</kbd>
 
@@ -35,9 +37,43 @@ const float racketRSpeed{ 7.f };
 ## Collision calculation
 I used the Axis-Aligned Bounding Box (AABB) algorithm to calculate the intersections between the balls and the rackets or borders in 2D.
 
+The boolean function : $f(A,B) = (A_{\text{minX}} \leq B_{\text{maxX}} \land A_{\text{maxX}} \geq B_{\text{minX}}) \land (A_{\text{minY}} \leq B_{\text{maxY}} \land A_{\text{maxY}} \geq B_{\text{minY}})$
+
 ![Collision calculation](https://developer.mozilla.org/en-US/docs/Games/Techniques/3D_collision_detection/screen_shot_2015-10-16_at_15.11.21.png "Collision calculation")\
 ![Collision calculation](https://developer.mozilla.org/en-US/docs/Games/Techniques/3D_collision_detection/aabb_test.png "Collision calculation")
-### $f(A,B) = (A_{\text{minX}} \leq B_{\text{maxX}} \land A_{\text{maxX}} \geq B_{\text{minX}}) \land (A_{\text{minY}} \leq B_{\text{maxY}} \land A_{\text{maxY}} \geq B_{\text{minY}})$
+
+```cpp
+// Collision with left racket
+if (ballMinX <= racketLMaxX && ballMaxX >= racketLMinX &&
+    ballMinY <= racketLMaxY && ballMaxY >= racketLMinY)
+{
+    const float racketMiddleY = racketLMinY + racketLHeight / 2.0f;
+
+    if (ballMaxY >= racketMiddleY)
+    {
+        collisionObject = BottomRacketL;
+    }
+    else
+    {
+        collisionObject = TopRacketL;
+    }
+}
+// Collision with right racket
+else if (ballMinX <= racketRMaxX && ballMaxX >= racketRMinX &&
+    ballMinY <= racketRMaxY && ballMaxY >= racketRMinY)
+{
+    const float racketMiddleY = racketRMinY + racketRHeight / 2.0f;
+
+    if (ballMaxY >= racketMiddleY)
+    {
+        collisionObject = BottomRacketR;
+    }
+    else
+    {
+        collisionObject = TopRacketR;
+    }
+}
+```
 
 <br/>
 
