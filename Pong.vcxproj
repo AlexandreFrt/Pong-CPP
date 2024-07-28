@@ -18,6 +18,20 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="sources\cpp\ball.cpp" />
+    <ClCompile Include="sources\cpp\input.cpp" />
+    <ClCompile Include="sources\cpp\main.cpp" />
+    <ClCompile Include="sources\cpp\racket.cpp" />
+    <ClCompile Include="sources\cpp\utils.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="sources\headers\ball.h" />
+    <ClInclude Include="sources\headers\input.h" />
+    <ClInclude Include="sources\headers\main.h" />
+    <ClInclude Include="sources\headers\racket.h" />
+    <ClInclude Include="sources\headers\utils.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{951f1060-b54d-4d39-8ab9-d3e384c416f1}</ProjectGuid>
@@ -73,6 +87,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IncludePath>$(ProjectDir)lib\sfml\x64\include;$(IncludePath)</IncludePath>
     <LibraryPath>$(ProjectDir)lib\sfml\x64\lib;$(LibraryPath)</LibraryPath>
+    <PublicIncludeDirectories>$(ProjectDir)sources\headers</PublicIncludeDirectories>
+    <PublicModuleDirectories>$(ProjectDir)sources\cpp</PublicModuleDirectories>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IncludePath>$(ProjectDir)lib\sfml\x86\include;$(IncludePath)</IncludePath>
@@ -113,7 +129,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\user\Desktop\Dev\Pong\sources\headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <FavorSizeOrSpeed>Neither</FavorSizeOrSpeed>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
@@ -170,20 +186,6 @@
       <Command>XCOPY "$(ProjectDir)lib\sfml\x64\bin_release" "$(TargetDir)*" /S /Y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="Sources\ball.cpp" />
-    <ClCompile Include="Sources\input.cpp" />
-    <ClCompile Include="Sources\main.cpp" />
-    <ClCompile Include="Sources\racket.cpp" />
-    <ClCompile Include="Sources\utils.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Sources\ball.h" />
-    <ClInclude Include="Sources\input.h" />
-    <ClInclude Include="Sources\main.h" />
-    <ClInclude Include="Sources\racket.h" />
-    <ClInclude Include="Sources\utils.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

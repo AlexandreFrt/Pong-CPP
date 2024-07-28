@@ -87,10 +87,10 @@ else if (ballMinX <= racketRMaxX && ballMaxX >= racketRMinX &&
 
 ```cpp
 // Window properties
-const string game_name{ "Pong" };
-const unsigned int window_width{ 800 };
-const unsigned int window_height{ 600 };
-const unsigned int frame_limit{ 60 };
+const string GAME_TITLE{ "Pong" };
+const unsigned int WINDOW_WIDTH{ 800 };
+const unsigned int WINDOW_HEIGHT{ 600 };
+const unsigned int FRAME_LIMIT{ 60 };
 ```
 
 > [!WARNING]  
@@ -100,24 +100,25 @@ const unsigned int frame_limit{ 60 };
 
 ```cpp
 // Game properties
-const Color playerLColor{ Color::Blue };
-const Color playerRColor{ Color::Red };
-const Color ballColor{ Color::White };
-const Player defaultPlayer = PlayerRight;
-const unsigned int maxScore{ 10 };
-const float racketLSpeed{ 7.f };
-const float racketRSpeed{ 7.f };
-const float defaultBallSpeed{ 7.f };
+const Color PLAYER_L_COLOR{ Color::Blue };
+const Color PLAYER_R_COLOR{ Color::Red };
+const Color BALL_COLOR{ Color::White };
+const Player DEFAULT_PLAYER = PlayerRight;
+const unsigned int MAX_SCORE{ 10 };
+const float RACKET_L_SPEED{ 7.f };
+const float RACKET_R_SPEED{ 7.f };
+const float DEFAULT_BALL_SPEED{ 7.f };
 // With each collision with a racket, the speed of the ball increases by this value
-const float ballSpeedIncrease{ 0.15f };
+const float BALL_SPEED_INCREASE_VALUE{ 0.15f };
 ```
 
 ## Volume
 ```cpp
+// Sound properties (Volume)
 // Racket collision sound
-const float racketSoundVolume{ 10.f };
+const float RACKET_SOUND_VOLUME{ 10.f };
 // Wall collision sound
-const float wallSoundVolume{ 10.f };
+const float WALL_SOUND_VOLUME{ 10.f };
 ```
 
 > [!NOTE]
@@ -126,29 +127,29 @@ const float wallSoundVolume{ 10.f };
 ## Racket properties
 ```cpp
 // Left racket properties
-const unsigned int racketLWidth{ 16 };
-const unsigned int racketLHeight{ 80 };
-const unsigned int racketLPosX{ 32 };
-const unsigned int racketLPosY{ (window_height / 2) - (racketLHeight / 2) };
+const unsigned int RACKET_L_WIDTH{ 16 };
+const unsigned int RACKET_L_HEIGHT{ 80 };
+const unsigned int DEFAULT_RACKET_L_POS_X{ 32 };
+const unsigned int DEFAULT_RACKET_L_POS_Y{ (WINDOW_HEIGHT / 2) - (RACKET_L_HEIGHT / 2) };
 // Minimum and maximum location of the racket
-const unsigned int racketLMinPosY{ 0 };
-const unsigned int racketLMaxPosY{ window_height - racketLHeight };
+const unsigned int RACKET_L_MIN_POS_Y{ 0 };
+const unsigned int RACKET_L_MAX_POS_Y{ WINDOW_HEIGHT - RACKET_L_HEIGHT };
 
 // Right racket properties
-const unsigned int racketRWidth{ 16 };
-const unsigned int racketRHeight{ 80 };
-const unsigned int racketRPosX{ window_width - 32 - racketRWidth };
-const unsigned int racketRPosY{ (window_height / 2) - (racketRHeight / 2) };
+const unsigned int RACKET_R_WIDTH{ 16 };
+const unsigned int RACKET_R_HEIGHT{ 80 };
+const unsigned int DEFAULT_RACKET_R_POS_X{ WINDOW_WIDTH - 32 - RACKET_R_WIDTH };
+const unsigned int DEFAULT_RACKET_R_POS_Y{ (WINDOW_HEIGHT / 2) - (RACKET_R_HEIGHT / 2) };
 // Minimum and maximum location of the racket
-const unsigned int racketRMinPosY{ 0 };
-const unsigned int racketRMaxPosY{ window_height - racketRHeight };
+const unsigned int RACKET_R_MIN_POS_Y{ 0 };
+const unsigned int RACKET_R_MAX_POS_Y{ WINDOW_HEIGHT - RACKET_R_HEIGHT };
 ```
 
 ## Ball properties
 ```cpp
 // Ball properties
-const float ballRadius{ 12.f };
+const float BALL_RADIUS{ 12.f };
 // Default location of the ball
-const unsigned int ballPosX{ static_cast<unsigned int>(window_width / 2.f - ballRadius / 2.f) };
-const unsigned int ballPosY{ static_cast<unsigned int>(window_height / 2.f - ballRadius) };
+const unsigned int DEFAULT_BALL_POS_X{ static_cast<unsigned int>(WINDOW_WIDTH / 2.f - BALL_RADIUS / 2.f) };
+const unsigned int DEFAULT_BALL_POS_Y{ static_cast<unsigned int>(WINDOW_HEIGHT / 2.f - BALL_RADIUS) };
 ```
